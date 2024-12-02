@@ -128,7 +128,7 @@ main .container {
     color: rgba(242, 242, 242, 1);
     max-width: 700px;
     text-transform: uppercase;
-    margin-bottom: 70px;
+    margin: 0;
 }
 
 .description {
@@ -272,8 +272,7 @@ main .container {
     line-height: 44.8px;
     letter-spacing: 0.04em;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    text-transform: uppercase;
     color: #F2F2F2;
     margin: 0;
     margin-bottom: 16px;
@@ -471,6 +470,7 @@ main .container {
     color: #091520;
     margin: 0;
     margin-bottom: 16px;
+    text-transform: uppercase;
 }
 
 .our-products-section_content_description {
@@ -622,7 +622,6 @@ main .container {
     margin: 0;
 }
 
-/* Стилі для кругового елементу */
 .d-section_item_circle {
     width: 62px;
     height: 62px;
@@ -633,13 +632,13 @@ main .container {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    animation: pulseCircle 2s ease-out infinite;
 }
 
 .d-section_item_circle:hover {
-    border: 1px solid #FFFFFF;
+    border: 1px solid #fff;
 }
 
-/* Пульсуючий ефект */
 .d-section_item_circle::after {
     content: '';
     position: absolute;
@@ -648,7 +647,6 @@ main .container {
     border-radius: 50%;
 }
 
-/* Внутрішній круг */
 .d-section_item_circle::before {
     content: '';
     width: 34px;
@@ -658,8 +656,6 @@ main .container {
     position: absolute;
 }
 
-
-/* Зміна стану при ховері */
 .d-section_item:hover .d-section_item_circle::before {
     animation: circleHover 0.3s forwards;
 }
@@ -667,6 +663,18 @@ main .container {
 @keyframes circleHover {
     to {
         transform: scale(1.1);
+    }
+}
+
+@keyframes pulseCircle {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -700,10 +708,10 @@ main .container {
 
 .fields-section_bg {
     position: absolute;
-    bottom: -10%;
+    bottom: -52%;
     right: 0;
-    width: 678px;
-    height: 900px;
+    width: 692px;
+    height: 1275px;
     z-index: 1;
 }
 
@@ -727,8 +735,7 @@ main .container {
     line-height: 44.8px;
     letter-spacing: 0.04em;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    text-transform: uppercase;
     color: #F2F2F2;
     margin: 0;
     margin-bottom: 16px;
@@ -743,7 +750,6 @@ main .container {
     text-align: center;
     color: #F2F2F2;
     margin: 0;
-    margin-bottom: 16px;
     max-width: 888px;
 }
 
@@ -762,7 +768,8 @@ main .container {
 }
 
 .fields-section_content_fields_list > *:nth-last-child(-n+3) {
-    transform: translateX(50%);
+    transform: translateX(54%);
+    height: 174px;
 }
 
 .fields-section_content_fields_list_item {
@@ -821,6 +828,7 @@ main .container {
     color: #F2F2F2;
     margin: 0;
     margin-bottom: 16px;
+    text-transform: uppercase;
 }
 
 .partners-section_content_description {
@@ -838,8 +846,6 @@ main .container {
 
 .partners-section_content_partners-slider {
     max-width: 1366px;
-    padding: 20px 0;
-    margin-top: 48px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -867,7 +873,7 @@ main .container {
 .partners-section_content .swiper-button-prev {
     width: 30px;
     height: 30px;
-    background-color: #F2F2F2;
+    background-color: #38414A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -879,15 +885,15 @@ main .container {
 }
 
 .partners-section_content .swiper-button-prev {
-    left: -32px;
-    top: 100%;
-    transform: translateY(-100%);
+    left: -46px;
+    top: 55%;
+    transform: translateY(0%);
 }
 
 .partners-section_content .swiper-button-next {
-    right: -32px;
-    top: 100%;
-    transform: translateY(-100%);
+    right: -46px;
+    top: 55%;
+    transform: translateY(0%);
 }
 
 /* News & Careers Section */
@@ -935,6 +941,7 @@ main .container {
     text-align: center;
     margin: 0;
     margin-bottom: 16px;
+    text-transform: uppercase;
 }
 
 .news-content_description {
