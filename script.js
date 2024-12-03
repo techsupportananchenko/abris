@@ -1,22 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get all tab items and content items
-    const tabItems = document.querySelectorAll('.tabs-settings_item');
+    const desktopTabs = document.querySelectorAll('.tabs-settings .tabs-settings_item');
+    const mobileTabs = document.querySelectorAll('.tabs-settings-mobile .tabs-settings_item');
     const contentItems = document.querySelectorAll('.capabilities_tabs_item');
 
     // Set first tab and content as active by default
-    contentItems[0].classList.add('active');
+    if (contentItems.length > 0) {
+        contentItems[0].classList.add('active');
+    }
 
-    // Add click event listener to each tab
-    tabItems.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-            // Remove active class from all tabs and content
-            tabItems.forEach(item => item.classList.remove('active'));
-            contentItems.forEach(item => item.classList.remove('active'));
+    function handleTabClick(clickedTab, index) {
+        // Remove active class from all tabs
+        desktopTabs.forEach(tab => tab.classList.remove('active'));
+        mobileTabs.forEach(tab => tab.classList.remove('active'));
+        contentItems.forEach(item => item.classList.remove('active'));
 
-            // Add active class to clicked tab and corresponding content
-            tab.classList.add('active');
+        // Add active class to corresponding tabs and content
+        clickedTab.classList.add('active');
+        if (contentItems[index]) {
             contentItems[index].classList.add('active');
-        });
+        }
+
+        // Sync other tab set
+        const isMobileTab = clickedTab.closest('.tabs-settings-mobile');
+        if (isMobileTab && desktopTabs[index]) {
+            desktopTabs[index].classList.add('active');
+        } else if (!isMobileTab && mobileTabs[index]) {
+            mobileTabs[index].classList.add('active');
+        }
+    }
+
+    // Add click event listeners
+    desktopTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => handleTabClick(tab, index));
+    });
+
+    mobileTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => handleTabClick(tab, index));
     });
 
     // Initialize Swiper
@@ -59,6 +79,95 @@ document.addEventListener('DOMContentLoaded', function() {
                 slidesPerView: 5,
                 spaceBetween: 24
             }
+        }
+    });
+
+    // Mobile Menu functionality
+    const burgerIcon = document.querySelector('.burger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu_item');
+    const body = document.body;
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    }
+
+    burgerIcon.addEventListener('click', toggleMenu);
+    closeIcon.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on menu items
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('active') && 
+            !e.target.closest('.mobile-menu') && 
+            !e.target.closest('.header_content_menu_mobile')) {
+            toggleMenu();
+        }
+    });
+
+    // Initialize D-Section Mobile Slider
+    const dSectionMobileSlider = new Swiper('.d-section-mobile-slider', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        initialSlide: 0, // Start with first slide
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 16
+            },
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 16
+            }
+        }
+    });
+
+    // D-Section Circle Points Interaction
+    const dSectionItems = document.querySelectorAll('.d-section_item');
+    const dSectionCircles = document.querySelectorAll('.d-section_item_circle');
+    
+    // Set first circle as active by default
+    if (dSectionCircles.length > 0) {
+        dSectionCircles[0].classList.add('active');
+    }
+
+    dSectionItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // Remove active class from all circles
+            dSectionCircles.forEach(circle => circle.classList.remove('active'));
+            
+            // Add active class to clicked circle
+            item.querySelector('.d-section_item_circle').classList.add('active');
+            
+            // Sync with mobile slider
+            if (dSectionMobileSlider) {
+                dSectionMobileSlider.slideTo(index);
+            }
+        });
+    });
+
+    // Sync circles when mobile slider changes
+    dSectionMobileSlider.on('slideChange', function () {
+        const activeIndex = dSectionMobileSlider.activeIndex;
+        
+        // Remove active class from all circles
+        dSectionCircles.forEach(circle => circle.classList.remove('active'));
+        
+        // Add active class to corresponding circle
+        if (dSectionCircles[activeIndex]) {
+            dSectionCircles[activeIndex].classList.add('active');
         }
     });
 });
