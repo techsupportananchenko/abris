@@ -33,6 +33,7 @@ body {
     letter-spacing: 0.04em;
     text-align: left;
     color: #2E3E89;
+    text-decoration: none;
 }
 
 .announcement_content_language {
@@ -714,7 +715,7 @@ main .container {
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
-    margin-top: 22px;
+    margin-top: 30px;
 }
 
 .d-section_item_hover::before {
@@ -822,7 +823,7 @@ main .container {
 .d-item-2 {
     position: absolute;
     top: 9.05%;
-    right: 7.62%;
+    right: 8.62%;
 }
 
 .d-item-3 {
@@ -2241,20 +2242,20 @@ body.menu-open {
 }
 
 
-.desktop {
+.who-we-are-section .desktop {
     display: block;
 }
 
-.mobile {
+.who-we-are-section .mobile {
     display: none;
 }
 
 @media (max-width: 1024px) {
-    .desktop {
+    .who-we-are-section .desktop {
         display: none;
     }
 
-    .mobile {
+    .who-we-are-section .mobile {
         display: block;
     }
 }
