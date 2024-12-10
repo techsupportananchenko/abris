@@ -723,7 +723,7 @@ main .container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -18px;
+    top: -17px;
     width: 0;
     height: 0;
     border-left: 12px solid transparent;
