@@ -210,4 +210,162 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Add fade-in class to elements that need to be animated
+    const elementsToAnimate = document.querySelectorAll('.content_image_img-top, .content_image_img-bottom, .content_text_title, .content_text_description');
+    elementsToAnimate.forEach(element => {
+        element.classList.add('fade-in');
+    });
+
+    // Function to check if element is in viewport
+    function checkVisibility() {
+        elementsToAnimate.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            // Determine when element should become visible
+            const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+            
+            if (isVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    // Check visibility on load and scroll
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Check immediately after loading
+
+    // Animation for capabilities section
+    function initCapabilitiesAnimation() {
+        const title = document.querySelector('.capabilities-section_content_title');
+        const description = document.querySelector('.capabilities-section_content_description');
+        const tabsSettings = document.querySelector('.tabs-settings');
+        const mobileTabsSettings = document.querySelector('.tabs-settings-mobile');
+        const tabsItems = document.querySelectorAll('.capabilities_tabs_item');
+
+        function checkCapabilitiesVisibility() {
+            const section = document.querySelector('.capabilities-section');
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                // Animate title and description with delay
+                setTimeout(() => {
+                    title.classList.add('active');
+                }, 200);
+                
+                setTimeout(() => {
+                    description.classList.add('active');
+                }, 400);
+
+                // Animate tabs
+                setTimeout(() => {
+                    tabsSettings.classList.add('active');
+                    mobileTabsSettings.classList.add('active');
+                }, 600);
+
+                // Animate tab content
+                tabsItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('fade-active');
+                    }, 800 + (index * 100));
+                });
+
+                // Remove event listener after animation triggers
+                window.removeEventListener('scroll', checkCapabilitiesVisibility);
+            }
+        }
+
+        window.addEventListener('scroll', checkCapabilitiesVisibility);
+        // Check position on load
+        checkCapabilitiesVisibility();
+    }
+
+    // Initialize capabilities animation
+    initCapabilitiesAnimation();
+
+    function initFieldsAnimation() {
+        const title = document.querySelector('.fields-section_content_title');
+        const description = document.querySelector('.fields-section_content_fields');
+        const items = document.querySelectorAll('.fields-section_content_fields_list_item');
+
+        function checkFieldsVisibility() {
+            const section = document.querySelector('.fields-section');
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                // Animate title
+                setTimeout(() => {
+                    title.classList.add('active');
+                }, 200);
+
+                // Animate description
+                setTimeout(() => {
+                    description.classList.add('active');
+                }, 400);
+
+                // Animate each list item with delay
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, 600 + (index * 100)); // Each next item appears 100ms later
+                });
+
+                // Remove event listener after animation triggers
+                window.removeEventListener('scroll', checkFieldsVisibility);
+            }
+        }
+
+        window.addEventListener('scroll', checkFieldsVisibility);
+        // Check position on load
+        checkFieldsVisibility();
+    }
+
+    // Initialize fields animation
+    initFieldsAnimation();
+
+    function initFooterAnimation() {
+        const footerItems = document.querySelectorAll('.footer_item');
+        const footerIcons = document.querySelectorAll('.footer_icons');
+        const footerCopyright = document.querySelector('.footer_copyright');
+
+        function checkFooterVisibility() {
+            const footer = document.querySelector('footer');
+            const footerTop = footer.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (footerTop < triggerPoint) {
+                // Animate footer items
+                footerItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, 200 + (index * 200));
+                });
+
+                // Animate icons
+                footerIcons.forEach((icons, index) => {
+                    setTimeout(() => {
+                        icons.classList.add('active');
+                    }, 600 + (index * 100));
+                });
+
+                // Animate copyright
+                setTimeout(() => {
+                    footerCopyright.classList.add('active');
+                }, 800);
+
+                // Remove event listener after animation triggers
+                window.removeEventListener('scroll', checkFooterVisibility);
+            }
+        }
+
+        window.addEventListener('scroll', checkFooterVisibility);
+        // Check position on load
+        checkFooterVisibility();
+    }
+
+    // Initialize footer animation
+    initFooterAnimation();
 });
