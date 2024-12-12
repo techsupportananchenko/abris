@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 spaceBetween: 24
             },
             // when window width is >= 1024px
-            1024: {
+            1025: {
                 slidesPerView: 4,
                 spaceBetween: 24
             },
@@ -228,6 +228,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (isVisible) {
                 element.classList.add('active');
+                
+                // Add animation for About us button when description becomes visible
+                if (element.classList.contains('content_text_description')) {
+                    const aboutUsButton = document.querySelector('.about-us_button');
+                    if (aboutUsButton) {
+                        aboutUsButton.classList.add('active');
+                    }
+                }
             }
         });
     }
@@ -368,4 +376,113 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize footer animation
     initFooterAnimation();
+
+    function initProductsAnimation() {
+        const title = document.querySelector('.our-products-section_content_title');
+        const description = document.querySelector('.our-products-section_content_description');
+        const products = document.querySelectorAll('.our-products-section_content_products_product');
+
+        function checkProductsVisibility() {
+            const section = document.querySelector('.our-products-section');
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                // Animate title
+                setTimeout(() => {
+                    title.classList.add('active');
+                }, 200);
+
+                // Animate description
+                setTimeout(() => {
+                    description.classList.add('active');
+                }, 400);
+
+                // Animate each product with delay
+                products.forEach((product, index) => {
+                    setTimeout(() => {
+                        product.classList.add('active');
+                    }, 600 + (index * 200)); // Each next product appears 200ms later
+                });
+
+                // Remove event listener after animation triggers
+                window.removeEventListener('scroll', checkProductsVisibility);
+            }
+        }
+
+        window.addEventListener('scroll', checkProductsVisibility);
+        // Check position on load
+        checkProductsVisibility();
+    }
+
+    // Initialize products animation
+    initProductsAnimation();
+
+    function initNewsAndCareersAnimation() {
+        // News elements
+        const newsTitle = document.querySelector('.news-content_title');
+        const newsDescription = document.querySelector('.news-content_description');
+        const newsItems = document.querySelectorAll('.news-content_news-list_item');
+        
+        // Careers elements
+        const careersTitle = document.querySelector('.careers-content_title');
+        const careersDescription = document.querySelector('.careers-content_description');
+        const careersItems = document.querySelectorAll('.careers-content_list_item');
+        const careersButton = document.querySelector('.careers-content_button_text');
+
+        function checkNewsAndCareersVisibility() {
+            const section = document.querySelector('.news-careers-section');
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                // Animate News section
+                setTimeout(() => {
+                    newsTitle.classList.add('active');
+                }, 200);
+
+                setTimeout(() => {
+                    newsDescription.classList.add('active');
+                }, 400);
+
+                // Animate news items with delay
+                newsItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, 600 + (index * 200));
+                });
+
+                // Animate Careers section with additional delay
+                setTimeout(() => {
+                    careersTitle.classList.add('active');
+                }, 1000);
+
+                setTimeout(() => {
+                    careersDescription.classList.add('active');
+                }, 1200);
+
+                // Animate careers items
+                careersItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('active');
+                    }, 1400 + (index * 200));
+                });
+
+                // Animate careers button last
+                setTimeout(() => {
+                    careersButton.classList.add('active');
+                }, 2000);
+
+                // Remove event listener after animation triggers
+                window.removeEventListener('scroll', checkNewsAndCareersVisibility);
+            }
+        }
+
+        window.addEventListener('scroll', checkNewsAndCareersVisibility);
+        // Check position on load
+        checkNewsAndCareersVisibility();
+    }
+
+    // Add this to your DOMContentLoaded event listener
+    initNewsAndCareersAnimation();
 });
