@@ -446,6 +446,7 @@ main .container {
     justify-content: flex-start;
     gap: 10px;
     width: 100%;
+    text-decoration: none;
 }
 
 .tabs-settings_contact-us_text {
@@ -2251,6 +2252,7 @@ body.menu-open {
     justify-content: flex-start;
     gap: 10px;
     width: 100%;
+    text-decoration: none;
 }
 
 .tabs-settings-mobile .tabs-settings_contact-us_text {
@@ -2262,6 +2264,7 @@ body.menu-open {
     text-align: left;
     color: #091520;
     margin: 0;
+    text-decoration: none;
 }
 
 .mobile {
