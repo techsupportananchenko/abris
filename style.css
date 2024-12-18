@@ -98,14 +98,12 @@ main .container {
     flex-direction: column;
     align-items: center;
     min-height: calc(100vh - var(--header-height));
-    background-image: url('src/img/bg.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
     background-color: #0B1520;
     padding-left: 16px;
     padding-right: 16px;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .title {
@@ -121,6 +119,8 @@ main .container {
     color: rgba(237, 226, 48, 1);
     text-transform: uppercase;
     padding-top: 182px;
+    position: relative;
+    z-index: 2;
 }
 
 .subtitle,
@@ -413,12 +413,6 @@ main .container {
     transition: transform 0.3s ease;
 }
 
-/* Animation on hover */
-.tabs-settings_item:hover span {
-    transform: translateX(20px);
-    color: #2E3E89;
-}
-
 
 .tabs-settings_item:nth-child(4) {
     padding-bottom: 20px !important;
@@ -431,6 +425,12 @@ main .container {
     
     .tabs-settings_contact-us {
         max-width: 235px;
+    }
+
+    /* Animation on hover */
+    .tabs-settings_item:hover span {
+        transform: translateX(15px);
+        color: #2E3E89;
     }
 }
 
@@ -542,11 +542,11 @@ main .container {
 }
 
 .item-3 {
-    background-image: url(src/img/tab-3.webp);
+    background-image: url(src/img/Capabilities\ _\ 03\ In-house\ team.webp);
 }
 
 .item-4 {
-    background-image: url(src/img/tab-4.webp);
+    background-image: url(src/img/Capabilities_\ 04\ Certified\ Operators.webp);
 }
 
 /* Our Products Section */
@@ -631,6 +631,13 @@ main .container {
 @media screen and (max-width: 1024px) {
     .our-products-section_content_products_product {
         width: 344px;
+    }
+
+    /* Animation on hover */
+    .tabs-settings_item:hover span {
+        transform: translateX(15px);
+        color: #2E3E89;
+        padding-right: 15px;
     }
     
 }
@@ -2687,4 +2694,34 @@ body.menu-open {
     .our-products-section_content_products_product:nth-last-child(-n+2).active {
         transform: translate(53%, 0); /* Keep X translation, reset Y translation */
     }
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 21, 32, 0.4);
+    z-index: 1;
+}
+
+.title,
+.subtitle {
+    position: relative;
+    z-index: 2;
 }
