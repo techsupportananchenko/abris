@@ -81,10 +81,11 @@ body {
 }
 
 /* Main Banner */
-
 .main {
     height: auto;
     aspect-ratio: 1440 / 770;
+    position: relative;
+    width: 100%;
 }
 
 @media (min-width: 1440px) {
@@ -168,7 +169,7 @@ main .container {
 
 @media screen and (max-width: 1023.98px) {
     .title {
-        padding-top: 89px;
+        padding-top: 49px;
         font-size: 32px;
         line-height: 1.2;
         margin-bottom: 16px;
@@ -188,6 +189,21 @@ main .container {
     .announcement_content_email {
         font-size: 12px;
         line-height: 16.8px;
+    }
+
+    .main {
+        aspect-ratio: 1440 / 770;
+        height: auto;
+    }
+
+    .background-video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    main .container {
+        justify-content: center;
     }
 }
 
@@ -1732,9 +1748,7 @@ footer {
 
 @media (max-width: 1024px) {
     .main {
-        min-height: 497px;
         height: auto;
-        aspect-ratio: 375 / 497;
     }
 
     .who-we-are-section {
@@ -2107,7 +2121,6 @@ footer {
 
 @media (max-width: 374px) {
     .main {
-        aspect-ratio: 320 / 425;
         min-height: auto;
     }
 
@@ -2704,9 +2717,26 @@ body.menu-open {
     min-width: 100%;
     min-height: 100%;
     width: auto;
-    height: auto;
+    height: 100%;
     z-index: 0;
-    object-fit: cover;
+    object-fit: contain;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .background-video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
 }
 
 .container::after {
