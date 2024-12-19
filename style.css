@@ -99,9 +99,6 @@ main .container {
     flex-direction: column;
     align-items: center;
     min-height: calc(100vh - var(--header-height));
-    background-color: #0B1520;
-    padding-left: 16px;
-    padding-right: 16px;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -2719,7 +2716,7 @@ body.menu-open {
     width: auto;
     height: 100%;
     z-index: 0;
-    object-fit: contain;
+    object-fit: cover;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
