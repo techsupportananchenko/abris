@@ -1,26 +1,26 @@
-#name: Deploy to Rocket.net via FTP
-#
-#on:
-#  push:
-#    branches:
-#      - master
-#
-#jobs:
-#  deploy:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v3
-#
-#      - name: Deploy via FTP
-#        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-#        with:
-#          server: ${{ secrets.FTP_SERVER }}
-#          username: ${{ secrets.FTP_USERNAME }}
-#          password: ${{ secrets.FTP_PASSWORD }}
-#          port: 21
-#          protocol: "ftp"
-#          local-dir: "./"
-#          server-dir: "/stage.abris-dg.com/"
-#          method: "ftp-simple"
+name: Deploy to Rocket.net via FTP
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: "ftp"
+          local-dir: "./wp-content/"
+          server-dir: "/stage.abris-dg.com/wp-content/"
+          method: "ftp-simple"
