@@ -526,7 +526,7 @@ main .container {
     letter-spacing: 0.04em;
     text-align: center;
     color: #091520;
-    margin: 0;  
+    margin: 0;
     margin-top: 16px;
 }
 
@@ -1020,7 +1020,7 @@ main .container {
     color: #091520;
     margin: 0;
     margin-bottom: 16px;
-    
+
     /* Limit text to 3 lines */
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -1176,6 +1176,10 @@ main .container {
     text-decoration: none;
     margin-top: 48px;
     text-transform: uppercase;
+}
+
+.careers-content_list_item_img {
+    object-fit: cover;
 }
 
 /* Footer */
