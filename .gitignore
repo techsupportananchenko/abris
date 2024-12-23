@@ -1,15 +1,21 @@
-# WordPress
-wp-config.php
-wp-content/*
+/*
+!wp-content/
+
+!.gitignore
+
 !wp-content/plugins/
+!wp-content/plugins/**
+
 !wp-content/themes/
-*.sql
+!wp-content/themes/creote/
+!wp-content/themes/creote/**
+!wp-content/themes/creote-child/
+!wp-content/themes/creote-child/**
 
-# Node.js
-node_modules/
-.idea/
-local-xdebuginfo.php
-
-# Apache
-.htaccess
-.htpasswd
+!.github/
+!.github/workflows/
+!.github/workflows/deploy.yml
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/index.php
+/wp-content/uploads/**
