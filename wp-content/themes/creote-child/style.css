@@ -214,7 +214,7 @@ strong {
 }
 
 @media (max-width: 768px) {
-    body .elementor-6639 .main-menu-wrapper .elementor-element.elementor-element-00f6c49 .header_logo_box_solo img {
+    body .elementor .main-menu-wrapper .elementor-element.elementor-widget .header_logo_box_solo img {
         width: 133px !important;
     }
 
