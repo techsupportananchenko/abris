@@ -195,12 +195,12 @@ strong {
     }
 
     .crt_mobile_menu .menu-box {
-        background-color: #091520;
+        background-color: var(--e-global-color-primary);
         padding: 0;
     }
 
     .crt_mobile_menu .menu-box .menu-outer ul.navbar_nav li a {
-        color: #F2F2F2;
+        color: var(--e-global-color-secondary);
         min-height: 39px;
         line-height: 39px;
     }
