@@ -175,6 +175,10 @@ strong {
     display: none !important;
 }
 
+.social-header-wrapper .elementor-grid-item a:hover {
+    opacity: .7;
+}
+
 @media (max-width: 1200px) {
     body .main-menu-wrapper > .e-con-inner {
         justify-content: space-between !important;
