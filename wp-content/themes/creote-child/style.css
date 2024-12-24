@@ -112,11 +112,11 @@ h1, h2 {
     font-family: 'Orbitron', sans-serif;
 }
 
-h1{
+h1 {
     font-weight: 600;
 }
 
-h2{
+h2 {
     font-weight: 700;
 }
 
@@ -125,24 +125,105 @@ p {
     font-weight: 400;
 }
 
-h3{
+h3 {
     font-family: 'Play', sans-serif;
     font-weight: 400;
 }
 
-h4{
+h4 {
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
 }
-h5{
+
+h5 {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
 }
 
-.button{
+.button {
     font-family: 'Orbitron', sans-serif;
     font-weight: 400;
 }
+
 strong {
     font-weight: 700;
 }
+
+/* header */
+@media (max-width: 992px) {
+    body .header_area, body .elementor-location-header {
+        display: block;
+    }
+}
+
+.crt_mobile_menu .menu-box {
+    width: 100%;
+}
+
+.navigation_menu .nav-link span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.social-header-wrapper .elementor-grid-item a {
+    width: auto;
+    margin-left: 10px;
+}
+
+.sticky_header_main {
+    display: none !important;
+}
+
+@media (max-width: 1200px) {
+    body .main-menu-wrapper > .e-con-inner {
+        justify-content: space-between !important;
+    }
+
+    .header .hamburger_menu .line {
+        background-color: #fff;
+    }
+
+    .crt_mobile_menu .menu-box .menu-outer ul.navbar_nav li {
+        border: none !important;
+        padding: 0 16px;
+        letter-spacing: .5px;
+    }
+
+    .crt_mobile_menu .menu-box {
+        background-color: #091520;
+        padding: 0;
+    }
+
+    .crt_mobile_menu .menu-box .menu-outer ul.navbar_nav li a {
+        color: #F2F2F2;
+        min-height: 39px;
+        line-height: 39px;
+    }
+
+    .crt_mobile_menu .menu-box .close-btn {
+        border: none;
+        color: #fff;
+        margin-top: 48px;
+        margin-right: 8px;
+    }
+
+    .crt_mobile_menu .menu-box .menu-outer ul.navbar_nav {
+        padding-top: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    body .elementor-6639 .main-menu-wrapper .elementor-element.elementor-element-00f6c49 .header_logo_box_solo img {
+        width: 133px !important;
+    }
+
+    .social-header-wrapper .elementor-grid-item a {
+        margin-left: 2px;
+    }
+
+    .social-header-wrapper .elementor-social-icon {
+        height: auto !important;
+    }
+}
+/* end header */
