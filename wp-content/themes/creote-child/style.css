@@ -109,7 +109,7 @@
 
 
 h1, h2 {
-    font-family: 'Orbitron', sans-serif;
+
 }
 
 h1 {
@@ -118,6 +118,18 @@ h1 {
 
 h2 {
     font-weight: 700;
+    font-size: 32px!important;
+    font-family: 'Orbitron', sans-serif !important;
+    letter-spacing: 1.2px;
+}
+
+@media (max-width: 768px) {
+    h2{
+        font-size: 24px!important;
+    }
+    .title_all_box .title_sections h2{
+        font-size: 24px!important;
+    }
 }
 
 p {
@@ -231,3 +243,42 @@ strong {
     }
 }
 /* end header */
+body .theme-btn.five {
+    font-family: 'Orbitron', sans-serif;
+    min-width: 165px;
+    border-radius: 0;
+    line-height: 54px !important;
+    height: 54px;
+}
+
+.theme-btn.five i {
+    display: none;
+}
+
+.image_boxes.style_four .image_box {
+    border-radius: 0;
+}
+
+.image_boxes.style_four .imgs {
+    border-radius: 0;
+}
+
+.who-we-are-wrapper {
+    margin-block-end: 15px !important;
+}
+
+@media (max-width: 767px) {
+    .image_boxes.style_four .image_box .pad_zero_right {
+        padding: 0 !important;
+    }
+
+    .image_boxes.style_four .image_box .pad_zero_left {
+        padding: 0 !important;
+        margin-bottom: 15px;
+    }
+
+    .who-we-are-main-wrapper .elementor-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
