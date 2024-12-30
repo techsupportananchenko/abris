@@ -305,7 +305,7 @@ body .theme-btn.five {
 }
 
 .tabs_all_box.type_one .tabs_header ul li a.active, .tabs_all_box.type_one .tabs_header ul li:hover a {
-    color: var(--e-global-color-5a6659e);
+    color: #2E3E89FF;
 }
 
 .tabs_all_box.type_one .tabs_header ul li {
@@ -313,7 +313,7 @@ body .theme-btn.five {
 }
 
 .tabs_all_box.type_one .tabs_header .toll_free {
-    background: var(--e-global-color-7fd9c35);
+    background: var(--e-global-color-accent);
 }
 
 .tabs_all_box.type_one .tabs_header .toll_free a {
