@@ -16,6 +16,7 @@
  *
  * @link https://codex.wordpress.org/Child_Themes
  */
+require_once 'inc/elementor-custom.php';
 function creote_child_enqueue_styles() {
     wp_enqueue_style( 'creote-style' , get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'creote-child-style',
@@ -23,6 +24,8 @@ function creote_child_enqueue_styles() {
         array( 'creote-style' ),
         wp_get_theme()->get('Version')
     );
+    wp_enqueue_style( 'child-style', get_template_directory_uri().'/style.css', array( 'essentials-style' ), wp_get_theme()->get('Version') );
+    wp_enqueue_style('essentials-child-style', get_stylesheet_uri());
 }
 
 add_action(  'wp_enqueue_scripts', 'creote_child_enqueue_styles' );
