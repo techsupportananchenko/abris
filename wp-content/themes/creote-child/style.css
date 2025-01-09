@@ -437,3 +437,37 @@ body .theme-btn.five {
         min-height: auto;
     }
 }
+
+.partners-slider-wrapper .swiper-slide-inner {
+    height: 104px;
+    margin: 0 12px !important;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EDE230;
+    justify-content: center;
+}
+
+.partners-slider-wrapper .elementor-swiper-button {
+    height: 30px;
+    width: 30px;
+    background-color: #37414a;
+    justify-content: center;
+    align-items: center;
+}
+
+.partners-slider-wrapper .elementor-swiper-button svg {
+    fill: #EDE230 !important;
+    height: .7em !important;
+    width: .5em !important;
+}
+
+.sidemenu_content_bx {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .partners-slider-wrapper .swiper-slide-inner {
+        margin: 0 auto !important;
+        max-width: 203px;
+    }
+}
