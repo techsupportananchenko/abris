@@ -609,11 +609,12 @@ body .theme-btn.five {
     }
 }
 
-.footer-content-wrapper{
+.footer-content-wrapper {
     max-width: 261px;
     margin-right: 128px;
-    .elementor-widget-creote-text-editor-v1{
-        h6{
+
+    .elementor-widget-creote-text-editor-v1 {
+        h6 {
             font-family: 'Orbitron', sans-serif;
             font-size: 14px;
             font-weight: 400;
@@ -625,19 +626,21 @@ body .theme-btn.five {
             margin-bottom: 0;
         }
     }
-    #footer-info a{
+
+    #footer-info a {
         font-family: 'Play', sans-serif;
-        font-size: 16px!important;
+        font-size: 16px !important;
         font-weight: 700;
         line-height: 22.4px;
         letter-spacing: 0.04em;
         text-align: left;
-        color: #EDE230!important;
+        color: #EDE230 !important;
         margin: 0;
         text-decoration: none;
         text-transform: capitalize;
-        &:hover{
-            color: #F2F2F2!important;
+
+        &:hover {
+            color: #F2F2F2 !important;
         }
     }
 }
