@@ -608,3 +608,99 @@ body .theme-btn.five {
 .footer-content-wrapper #footer-info a:hover {
   color: #F2F2F2 !important;
 }
+
+.hotspot-main-wrapper .wrap_svl_center_box {
+  display: block;
+}
+.hotspot-main-wrapper .wrap_svl {
+  width: 100%;
+}
+
+#powerTip {
+  border-radius: 0;
+  background-color: #fff;
+}
+#powerTip strong {
+  font-family: "Orbitron", sans-serif;
+  color: #091520;
+}
+#powerTip p {
+  font-size: 14px;
+  font-family: "Play", sans-serif;
+  color: #4B4B50;
+  line-height: 19.6px;
+  margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  #powerTip {
+    display: none !important;
+  }
+}
+
+#powerTip.n:before {
+  border-top: 10px solid rgb(255, 255, 255);
+}
+
+#powerTip.s:before {
+  border-bottom: 10px solid #fff;
+}
+
+#powerTip.e:before {
+  border-right: 10px solid #fff;
+}
+
+#powerTip.w:before {
+  border-left: 10px solid #fff;
+  right: -10px;
+}
+
+#powerTip.ne:before, #powerTip.nw:before {
+  border-top: 10px solid #fff;
+  border-top: 10px solid rgb(255, 255, 255);
+}
+
+#powerTip.se:before, #powerTip.sw:before {
+  border-bottom: 10px solid #fff;
+  border-bottom: 10px solid rgb(255, 255, 255);
+}
+
+#powerTip.nw-alt:before, #powerTip.ne-alt:before, #powerTip.sw-alt:before, #powerTip.se-alt:before {
+  border-top: 10px solid #fff;
+  border-top: 10px solid rgb(255, 255, 255);
+}
+
+#powerTip.sw-alt:before, #powerTip.se-alt:before {
+  border-bottom: 10px solid #fff;
+  border-bottom: 10px solid rgb(255, 255, 255);
+}
+
+.hotspot-slider .swiper-slide {
+  background-color: #fff;
+  padding: 16px;
+}
+.hotspot-slider .swiper-slide strong {
+  font-family: "Orbitron", sans-serif;
+  display: block;
+}
+.hotspot-slider .swiper-slide p {
+  color: #000;
+  font-size: 14px;
+  font-family: "Play", sans-serif;
+  margin-bottom: 0;
+}
+.hotspot-slider .swiper-slide .box_view_html {
+  max-width: 100%;
+}
+
+.swiper-main-bul-wrapper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: transparent;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #091520;
+}
+.swiper-main-bul-wrapper .swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background: #091520;
+  opacity: 1;
+}

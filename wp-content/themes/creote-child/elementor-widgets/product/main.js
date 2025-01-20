@@ -17,3 +17,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     targets.forEach((target) => observer.observe(target));
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderWrapper = document.querySelector(".hotspot-slider .swiper-wrapper");
+    const points = document.querySelectorAll(".point_style");
+
+
+    points.forEach((point, index) => {
+        const contentHTML = point.getAttribute("data-html");
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
+        slide.innerHTML = contentHTML;
+        sliderWrapper.appendChild(slide);
+
+
+        point.addEventListener("click", () => {
+            swiperInstance.slideTo(index);
+        });
+    });
+
+
+
+    const swiperInstance = new Swiper(".hotspot-slider", {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+
+                return `<span class="${className}"></span>`;
+            },
+        },
+    });
+});
