@@ -508,17 +508,34 @@ body .theme-btn.five {
     min-height: 79px;
 }
 
-.link_box_contents.style_one .link_content_bx .con_box a {
-    font-family: 'Play', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    letter-spacing: 0.04em;
-    text-align: left;
-    color: #2E3E89;
-    margin: auto 0 0 0;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.link_box_contents.style_one .link_content_bx .con_box {
+    min-height: 132px;
+    a {
+        font-family: 'Play', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        color: #2E3E89;
+        margin: auto 0 0 0;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        &:not([href]),
+        &[href=""] {
+            .icon-right-arrow-long{
+                display: none;
+            }
+        }
+        &:hover{
+            color: var(--e-global-color-primary);
+        }
+    }
+}
+body .top-bar .e-con-inner{
+    @media (min-width: 768px) and (max-width: 1024px) {
+        padding: 0;
+    }
 }
 
 .link_box_contents.style_one .link_content_bx {

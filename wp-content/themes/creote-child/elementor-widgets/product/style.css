@@ -123,6 +123,9 @@ body .product-front-hero {
     padding 0.4s ease-in-out;
     overflow: hidden;
 }
+.product-front img{
+    object-fit: cover;
+}
 
 .product-back-description {
     font-family: 'Play', sans-serif;
@@ -135,8 +138,13 @@ body .product-front-hero {
     margin-bottom: 10px;
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    transition-delay: 0.6s;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    transition-delay: 0.2s;
+    display: -webkit-box;
+    -webkit-line-clamp: 13;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-back-icon {

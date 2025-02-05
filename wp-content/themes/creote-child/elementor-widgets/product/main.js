@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const targets = document.querySelectorAll(
         ".our-products-section_content_title, " +
         ".our-products-section_content_description, " +
-        ".product-front-hero, " +
         ".our-products-section_content_products_product_title"
     );
 

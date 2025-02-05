@@ -491,6 +491,9 @@ body .theme-btn.five {
   min-height: 79px;
 }
 
+.link_box_contents.style_one .link_content_bx .con_box {
+  min-height: 132px;
+}
 .link_box_contents.style_one .link_content_bx .con_box a {
   font-family: "Play", sans-serif;
   font-size: 14px;
@@ -503,6 +506,18 @@ body .theme-btn.five {
   cursor: pointer;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+}
+.link_box_contents.style_one .link_content_bx .con_box a:not([href]) .icon-right-arrow-long, .link_box_contents.style_one .link_content_bx .con_box a[href=""] .icon-right-arrow-long {
+  display: none;
+}
+.link_box_contents.style_one .link_content_bx .con_box a:hover {
+  color: var(--e-global-color-primary);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body .top-bar .e-con-inner {
+    padding: 0;
+  }
 }
 
 .link_box_contents.style_one .link_content_bx {
