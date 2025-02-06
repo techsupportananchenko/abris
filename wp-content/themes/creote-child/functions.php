@@ -26,6 +26,13 @@ function creote_child_enqueue_styles() {
 	);
 	wp_enqueue_style( 'child-style', get_template_directory_uri() . '/style.css', array( 'essentials-style' ), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_style( 'essentials-child-style', get_stylesheet_uri() );
+    wp_enqueue_script(
+        'creote-child-script',
+        get_stylesheet_directory_uri() . '/assets/js/index.js',
+        array( 'jquery' ),
+        wp_get_theme()->get( 'Version' ),
+        true
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'creote_child_enqueue_styles' );
@@ -38,7 +45,7 @@ add_action( 'init', 'remove_creote_plugin_widgets_init', 20 );
 
 
 function my_creote_core_register_elementor_widgets() {
-	// header 
+	// header
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/header-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/header-v2.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/header-v3.php';
@@ -56,7 +63,7 @@ function my_creote_core_register_elementor_widgets() {
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/menu.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/floating-menu.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/header/contact-list.php';
-	// footer 
+	// footer
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/footer/about-company-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/footer/foo-get-in-touch-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/footer/foo-navigation-v1.php';
@@ -75,7 +82,7 @@ function my_creote_core_register_elementor_widgets() {
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/slider/slider-v4.php';
 	// Single Banner
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/slider/single-banner-v1.php';
-	// content 
+	// content
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/theme-button-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/title-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/video-btn.php';
@@ -120,7 +127,7 @@ function my_creote_core_register_elementor_widgets() {
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/image-carousel-box-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/image-grid-box-v1.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content/list-items-v1.php';
-	// content two 
+	// content two
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content-two/subscribe-v2.php';
 	require_once CREOTE_ADDONS_DIR . '/inc/functions/elementor-widgets/content-two/text-editor-v1.php';
 	// contetn three

@@ -240,6 +240,16 @@ body .theme-btn.five {
           margin-block-end: 15px !important;
 }
 
+.who-we-are-main-wrapper .image_boxes.style_four .image_box.one {
+  margin-bottom: 24px;
+}
+.who-we-are-main-wrapper .image_boxes.style_four .image_box .pad_zero_left {
+  padding-right: 12px;
+}
+.who-we-are-main-wrapper .image_boxes.style_four .image_box .pad_zero_right {
+  padding-left: 12px;
+}
+
 @media (max-width: 767px) {
   .image_boxes.style_four .image_box .pad_zero_right {
     padding: 0 !important;
