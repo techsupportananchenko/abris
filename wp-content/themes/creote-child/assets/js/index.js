@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
     function updateParallax() {
 
         if ($window.width() < 1024) {
-            $parallax.css('background-position', 'center ' + initialY + 'px');
+            $parallax.css('background-position', 'center center');
             return;
         }
 
