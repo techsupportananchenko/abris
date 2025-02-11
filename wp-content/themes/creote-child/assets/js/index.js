@@ -51,4 +51,18 @@ jQuery(document).ready(function($) {
 
     $window.on('scroll resize', updateParallax);
     updateParallax();
+
+
+    let $link = $(".cap-wrapper .toll_free a");
+
+    if ($link.length) {
+        $link.each(function () {
+            let href = $(this).attr("href");
+            if (href && href.startsWith("tel:")) {
+                $(this).attr("href", href.replace("tel:", ""));
+            }
+        });
+    }
+
+
 });

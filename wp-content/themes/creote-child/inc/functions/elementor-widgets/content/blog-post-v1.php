@@ -19,16 +19,16 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 	protected function register_controls() {
 		$this->start_controls_section(
 			'blog_post_grid_content',
-			[ 
+			[
 				'label' => __( 'Blog  Content', 'creote-addons' )
 			]
 		);
 		$this->add_control(
 			'news_styles',
-			[ 
+			[
 				'label'   => __( 'News Styles', 'creote-addons' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [ 
+				'options' => [
 					'style_one'   => __( 'Style One', 'creote-addons' ),
 					'style_two'   => __( 'Style Two', 'creote-addons' ),
 					'style_three' => __( 'Style Three', 'creote-addons' ),
@@ -45,10 +45,10 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'news_column',
-			[ 
+			[
 				'label'   => __( 'News Column', 'creote-addons' ),
 				'type'    => Controls_Manager::SELECT,
-				'options' => [ 
+				'options' => [
 					'five_column'  => __( 'Five Column', 'creote-addons' ),
 					'four_column'  => __( 'Four Column', 'creote-addons' ),
 					'three_column' => __( 'Three Column', 'creote-addons' ),
@@ -60,35 +60,35 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'normal_view',
-			[ 
+			[
 				'label'        => __( 'List View Disable / Enable', 'creote-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => __( 'Yes', 'creote-addons' ),
 				'label_off'    => __( 'No', 'creote-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
-				'condition'    => [ 
+				'condition'    => [
 						'news_styles' => 'style_two'
 					],
 			]
 		);
 		$this->add_control(
 			'masonory_enable',
-			[ 
+			[
 				'label'        => __( 'Gird View Enable', 'creote-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => __( 'Yes', 'creote-addons' ),
 				'label_off'    => __( 'No', 'creote-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
-				'condition'    => [ 
+				'condition'    => [
 						'news_styles' => 'style_four'
 					],
 			]
 		);
 		$this->add_control(
 			'post_count',
-			[ 
+			[
 				'label'   => __( 'Post Count', 'creote-addons' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 3,
@@ -99,7 +99,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'text_limit',
-			[ 
+			[
 				'label'   => esc_html__( 'Text Limit', 'creote-addons' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 3,
@@ -110,7 +110,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'query_orderby',
-			[ 
+			[
 				'label'   => esc_html__( 'Order By', 'creote-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'date',
@@ -124,7 +124,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'query_order',
-			[ 
+			[
 				'label'   => esc_html__( 'Order', 'creote-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'DESC',
@@ -136,7 +136,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'query_category',
-			[ 
+			[
 				'type'    => Controls_Manager::SELECT,
 				'label'   => esc_html__( 'Category', 'creote-addons' ),
 				'options' => get_blog_categories(),
@@ -144,7 +144,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'button_text',
-			[ 
+			[
 				'label'       => __( 'Button Text', 'creote-addons' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default'     => __( 'Read More', 'creote-addons' ),
@@ -153,27 +153,27 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_control(
 			'border_radius_enable',
-			[ 
+			[
 				'label'        => __( 'Border Radius Disable / Enable', 'creote-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => __( 'Yes', 'creote-addons' ),
 				'label_off'    => __( 'No', 'creote-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
-				'condition'    => [ 
+				'condition'    => [
 						'news_styles' => 'style_four'
 					],
 			]
 		);
 		$this->add_control(
 			'trans',
-			[ 
+			[
 				'type' => Controls_Manager::DIVIDER,
 			]
 		);
 		$this->add_control(
 			'pagination_enable',
-			[ 
+			[
 				'label'        => __( 'Pagination Enable', 'creote-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => __( 'Yes', 'creote-addons' ),
@@ -184,29 +184,29 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 		);
 		$this->add_responsive_control(
 			'pagination_alignment',
-			[ 
+			[
 				'label'     => __( 'Pagination alignments', 'creote-addons' ),
 				'type'      => Controls_Manager::CHOOSE,
-				'options'   => [ 
-					'left'   => [ 
+				'options'   => [
+					'left'   => [
 						'title' => __( 'Pagination Left', 'creote-addons' ),
 						'icon'  => 'fa fa-align-left',
 					],
-					'center' => [ 
+					'center' => [
 						'title' => __( 'Pagination Center', 'creote-addons' ),
 						'icon'  => 'fa fa-align-center',
 					],
-					'right'  => [ 
+					'right'  => [
 						'title' => __( 'Pagination Right', 'creote-addons' ),
 						'icon'  => 'fa fa-align-right',
 					],
 				],
 				'default'   => 'center',
 				'toggle'    => true,
-				'selectors' => [ 
+				'selectors' => [
 					'{{WRAPPER}} .pagination ' => 'text-align: {{VALUE}}!important;',
 				],
-				'condition' => [ 
+				'condition' => [
 					'pagination_enable' => 'yes'
 				],
 			]
@@ -363,11 +363,14 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
                                     <div class="category"> <?php creote_category(); ?> </div>
 									<?php the_title( '<h2 class="title"><a href="' . esc_url( '#' ) . '" rel="bookmark">', '</a></h2>' ); ?>
 									<?php if ( ! empty( $myexcerpt ) ) : ?>
-										<p class="short_desc"><?php echo esc_html( $myexcerpt ); ?></p> <?php endif; ?> <a
-										href="<?php echo esc_url( '#' ); ?>"
-										class="read_more "><?php echo esc_attr( $settings['button_text'] ); ?><i
-											class="icon-right-arrow-long"></i></a>
-								</div>
+										<p class="short_desc"><?php echo esc_html( $myexcerpt ); ?></p> <?php endif; ?>
+                                    <?php if ( ! empty( $settings['button_text'] ) ) : ?>
+                                        <a href="<?php echo esc_url( get_permalink() ); ?>" class="read_more">
+                                            <?php echo esc_attr( $settings['button_text'] ); ?>
+                                            <i class="icon-right-arrow-long"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
 							</div>
 						</div> <?php elseif ( $settings['news_styles'] == 'style_eight' ) : ?>
 						<div class="grid_box _card">
