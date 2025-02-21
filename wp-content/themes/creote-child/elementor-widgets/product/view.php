@@ -17,8 +17,8 @@ $background_url = !empty($background_image['url']) ? esc_url($background_image['
 <div class="our-products-section" id="products">
     <img src="<?php echo $background_url; ?>" alt="our products" class="our-products-section_bg" loading="lazy">
     <div class="our-products-section_content">
-        <h2 class="our-products-section_content_title"><?php echo esc_html($title); ?></h2>
-        <p class="our-products-section_content_description"><?php echo esc_html($sub_title); ?></p>
+<!--        <h2 class="our-products-section_content_title">--><?php //echo esc_html($title); ?><!--</h2>-->
+<!--        <p class="our-products-section_content_description">--><?php //echo esc_html($sub_title); ?><!--</p>-->
         <div class="our-products-section_content_products">
             <?php if (!empty($products)) : ?>
                 <?php foreach ($products as $product) : ?>

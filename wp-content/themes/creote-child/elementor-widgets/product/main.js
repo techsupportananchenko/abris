@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains("fadeInUp")) {
                 entry.target.classList.add("animated", "fadeInUp");
                 observer.unobserve(entry.target);
             }

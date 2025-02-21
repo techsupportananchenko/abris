@@ -46,23 +46,23 @@ class Elementor_Hero_Widget extends \Elementor\Widget_Base
         );
 
 
-        $this->add_control(
-            'title',
-            [
-                'label' => esc_html__('Title', 'textdomain'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => esc_html__('Type your sub title here', 'textdomain'),
-            ]
-        );
-
-        $this->add_control(
-            'sub_title',
-            [
-                'label' => esc_html__('Sub Title', 'textdomain'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'placeholder' => esc_html__('Type your description here', 'textdomain'),
-            ]
-        );
+//        $this->add_control(
+//            'title',
+//            [
+//                'label' => esc_html__('Title', 'textdomain'),
+//                'type' => \Elementor\Controls_Manager::TEXT,
+//                'placeholder' => esc_html__('Type your sub title here', 'textdomain'),
+//            ]
+//        );
+//
+//        $this->add_control(
+//            'sub_title',
+//            [
+//                'label' => esc_html__('Sub Title', 'textdomain'),
+//                'type' => \Elementor\Controls_Manager::TEXT,
+//                'placeholder' => esc_html__('Type your description here', 'textdomain'),
+//            ]
+//        );
 
         $this->add_control(
             'background_image',
@@ -141,9 +141,9 @@ class Elementor_Hero_Widget extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        if (empty($settings['title']) || empty($settings['sub_title'])) {
-            return;
-        }
+//        if (empty($settings['title']) || empty($settings['sub_title'])) {
+//            return;
+//        }
         if (empty($settings['products']) || !is_array($settings['products'])) {
             return;
         }
