@@ -558,6 +558,10 @@ body .theme-btn.five {
   left: 2px;
 }
 
+.link_box_contents.style_one .link_content_bx .con_box a:hover {
+  color: #EDE230;
+}
+
 .link_box_contents.style_one .link_content_bx .image_box {
   min-width: 29%;
 }
