@@ -64,5 +64,10 @@ jQuery(document).ready(function($) {
         });
     }
 
+    $('.crt_mobile_menu .menu-outer a').on('click', function (e) {
+        $('body').removeClass('crt_mobile_menu-visible');
+    });
+
+
 
 });
