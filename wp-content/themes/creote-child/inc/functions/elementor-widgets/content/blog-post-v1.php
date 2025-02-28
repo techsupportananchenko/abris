@@ -361,7 +361,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 									</div> <?php endif; ?>
 								<div class="content_box ">
                                     <div class="category"> <?php creote_category(); ?> </div>
-									<?php the_title( '<h2 class="title"><a href="' . esc_url( '#' ) . '" rel="bookmark">', '</a></h2>' ); ?>
+									<?php the_title( '<h2 class="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 									<?php if ( ! empty( $myexcerpt ) ) : ?>
 										<p class="short_desc"><?php echo esc_html( $myexcerpt ); ?></p> <?php endif; ?>
                                     <?php if ( ! empty( $settings['button_text'] ) ) : ?>
@@ -378,7 +378,7 @@ class Widget_creote_blog_post_grid_v1 extends Widget_Base {
 									<div class="image_box "> <?php the_post_thumbnail(); ?> </div> <?php endif; ?>
 								<div class="content_box">
 									<div class="category"> <?php creote_category(); ?> </div>
-									<?php the_title( '<h2 class="title"><a href="' . esc_url( '#' ) . '" rel="bookmark">', '</a></h2>' ); ?>
+									<?php the_title( '<h2 class="title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 									<a href="<?php echo esc_url( '#' ); ?>"
 										class="link__go"><?php echo esc_attr( $settings['button_text'] ); ?><i
 											class="icon-right-arrow-long"></i></a>

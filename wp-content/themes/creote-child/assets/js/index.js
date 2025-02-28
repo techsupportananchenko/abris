@@ -68,6 +68,27 @@ jQuery(document).ready(function($) {
         $('body').removeClass('crt_mobile_menu-visible');
     });
 
+    jQuery(document).ready(function($) {
+        function equalizeCardHeights() {
+            let maxHeight = 0;
+            $('.grid_box._card').css('height', 'auto');
+
+            $('.grid_box._card').each(function() {
+                var cardHeight = $(this).outerHeight();
+                if (cardHeight > maxHeight) {
+                    maxHeight = cardHeight;
+                }
+            });
+
+            $('.grid_box._card').css('height', maxHeight);
+        }
+
+        equalizeCardHeights();
+
+        $(window).resize(function() {
+            equalizeCardHeights();
+        });
+    });
 
 
 });
