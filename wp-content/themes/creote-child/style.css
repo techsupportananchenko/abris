@@ -647,6 +647,9 @@ body .theme-btn.five {
   margin-bottom: 11px;
   letter-spacing: 0.04em;
 }
+.news_box.style_seven .image_box::before {
+  background: #2E3E89;
+}
 
 .footer-content-wrapper {
   max-width: 261px;

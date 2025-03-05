@@ -675,6 +675,9 @@ body .top-bar .e-con-inner{
         margin-bottom: 11px;
         letter-spacing: .04em;
     }
+    .image_box::before{
+        background: #2E3E89;
+    }
 }
 
 .footer-content-wrapper {
