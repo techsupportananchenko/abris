@@ -1,3 +1,10 @@
+<?php
+/*
+Template Name: Custom Contact Us
+*/
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
