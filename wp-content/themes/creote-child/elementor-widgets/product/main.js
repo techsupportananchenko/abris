@@ -51,3 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.delete-link a').forEach(link => {
+        link.setAttribute('href', '#');
+    });
+});
